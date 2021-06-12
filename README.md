@@ -18,18 +18,19 @@
     mcli -s booking
     ```
   
-- Create a model files
+- Create a model file
     ```bash
     mcli -m vehicle
     ```
 - Generate framework source files
     ```bash
-    # run this inside flutter project's root dir
-    mcli -w # -w enables watch mode. Use -d for one time generation 
+    # Run this inside the root directory of a Flutter project
+    # -w enables watch mode. Use -d for one time generation
+    mcli -w 
     ```
 - Clean generated framework source files
     ```bash
-    # run this inside flutter project's root dir
+    # Run this inside the root directory of a Flutter project
     mcli -d 
     ```
 
