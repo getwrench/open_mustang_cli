@@ -8,11 +8,11 @@ class Args {
       'screen',
       abbr: 's',
       help: 'Creates screen files in\n'
-          ' lib/src/screens/booking/new_user/new_user_service.dart\n'
-          ' lib/src/screens/booking/new_user/new_user_state.dart\n'
-          ' lib/src/screens/booking/new_user/new_user_screen.dart\n'
-          'and a model in'
-          ' lib/src/models/new_user.dart\n',
+          '> lib/src/screens/booking/new_user/new_user_service.dart\n'
+          '> lib/src/screens/booking/new_user/new_user_state.dart\n'
+          '> lib/src/screens/booking/new_user/new_user_screen.dart\n'
+          'and a model in\n'
+          '> lib/src/models/new_user.dart\n',
       valueHelp: 'booking/new_user',
     );
 
@@ -20,7 +20,7 @@ class Args {
       'model',
       abbr: 'm',
       help: 'Creates a model in\n'
-          ' lib/src/models/vehicle.dart\n',
+          '> lib/src/models/vehicle.dart\n',
       valueHelp: 'vehicle',
     );
 
