@@ -42,7 +42,7 @@ class ${assetName}Service {
       );
       updateState1($modelVar, reload: false);
     }
-    return memoize(() => getData());
+    return memoize(getData);
   }
   
   Future<void> getData({
@@ -51,7 +51,9 @@ class ${assetName}Service {
     $assetName $modelVar = WrenchStore.get<$assetName>() ?? $assetName();
     if (showBusy) {
       $modelVar = $modelVar.rebuild(
-        (b) => b..clearScreenCache = false,
+        (b) => b
+          ..busy = true
+          ..errorMsg = null,
       );
       updateState1($modelVar);
     }

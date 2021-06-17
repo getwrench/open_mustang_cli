@@ -55,9 +55,7 @@ class ${assetName}Screen extends StatelessWidget {
             if (state?.$modelVar?.errorMsg?.isNotEmpty ?? false) {
               return WrenchErrorWithDescriptionScreen(
                 description: state.$modelVar.errorMsg,
-                onPressed: () {
-                  ${assetName}Service().clearCacheAndReload();
-                },
+                onPressed: () => ${assetName}Service().clearCacheAndReload(),
               );
             }
   
