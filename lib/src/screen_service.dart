@@ -53,7 +53,7 @@ class ${assetName}Service {
       $modelVar = $modelVar.rebuild(
         (b) => b
           ..busy = true
-          ..errorMsg = null,
+          ..errorMsg = '',
       );
       updateState1($modelVar);
     }

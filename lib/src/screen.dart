@@ -49,7 +49,7 @@ class ${assetName}Screen extends StatelessWidget {
             );
   
             if (state?.$modelVar?.busy ?? false) {
-              return WrenchProgressIndicatorScreen(); 
+              return const WrenchProgressIndicatorScreen(); 
             }
   
             if (state?.$modelVar?.errorMsg?.isNotEmpty ?? false) {
