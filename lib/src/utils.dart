@@ -32,7 +32,11 @@ class Utils {
   }
 
   static void runProcess(String cmd, List<String> args) async {
-    Process proc = await Process.start(cmd, args);
+    Process proc = await Process.start(
+      cmd,
+      args,
+      runInShell: Platform.isWindows, // runInShell only in Windows
+    );
     proc.stdout.transform(utf8.decoder).listen(
           (data) => stdout.write(data),
           onError: (error) => stdout.write(error),
