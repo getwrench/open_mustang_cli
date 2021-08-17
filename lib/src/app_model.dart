@@ -37,9 +37,11 @@ import 'package:mustang_core/mustang_core.dart';
 @appModel 
 class \$$modelClass {
   @InitField(false)
+  @SerializeField(false)
   bool busy;
 
   @InitField('')
+  @SerializeField(false)
   String errorMsg;
   
   @InitField(false)
