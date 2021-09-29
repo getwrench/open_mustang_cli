@@ -6,6 +6,7 @@ import 'package:path/path.dart' as p;
 class Utils {
   static String defaultScreenPrefix = 'lib/src/screens';
   static String defaultModelPrefix = 'lib/src/models';
+  static String defaultUtilsPrefix = 'lib/src/utils';
 
   static String class2File(String className) {
     RegExp exp = RegExp(r'(?<=[0-9a-z])[A-Z]');

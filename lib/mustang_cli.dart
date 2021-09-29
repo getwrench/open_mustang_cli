@@ -7,6 +7,7 @@ import 'package:mustang_cli/src/screen.dart';
 import 'package:mustang_cli/src/screen_directory.dart';
 import 'package:mustang_cli/src/screen_service.dart';
 import 'package:mustang_cli/src/screen_state.dart';
+import 'package:mustang_cli/src/util_service.dart';
 import 'package:mustang_cli/src/utils.dart';
 
 class MustangCli {
@@ -38,6 +39,14 @@ class MustangCli {
       String modelFile = parsedArgs['model'] ?? '';
       if (modelFile.isNotEmpty) {
         await AppModel.create(modelFile);
+      }
+
+      // if arg -u/--util exists
+      bool utilFlag = parsedArgs['util'] ?? false;
+      if (utilFlag) {
+        print('Creating utils file for the project');
+        String utilFileName = 'mustang_utils.dart';
+        await UtilService.create(utilFileName);
       }
 
       // if arg -d/--clean exists

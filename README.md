@@ -22,6 +22,12 @@
     ```bash
     mcli -m vehicle
     ```
+
+- Create a mustang utils file
+    ```bash
+    mcli -u
+    ```
+
 - Generate framework source files
     ```bash
     # Run this inside the root directory of a Flutter project

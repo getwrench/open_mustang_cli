@@ -25,6 +25,14 @@ class Args {
     );
 
     parser.addFlag(
+      'util',
+      abbr: 'u',
+      help: 'Generates util files',
+      defaultsTo: false,
+      negatable: false,
+    );
+
+    parser.addFlag(
       'build',
       abbr: 'b',
       help: 'Generates runtime files',
