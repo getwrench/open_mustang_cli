@@ -42,7 +42,7 @@ class ${assetName}Service {
       );
       updateState1($modelVar, reload: false);
     }
-    return memoize(getData);
+    return memoizeScreen(getData);
   }
   
   Future<void> getData({
@@ -61,7 +61,7 @@ class ${assetName}Service {
   }
 
   void clearCacheAndReload({bool reload = true}) {
-    clearCache(reload: reload);
+    clearMemoizedScreen(reload: reload);
   }
 }
     ''';
