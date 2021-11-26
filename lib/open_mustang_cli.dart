@@ -10,7 +10,7 @@ import 'package:mustang_cli/src/screen_state.dart';
 import 'package:mustang_cli/src/util_service.dart';
 import 'package:mustang_cli/src/utils.dart';
 
-class MustangCli {
+class OpenMustangCli {
   static void run(List<String> args) async {
     ArgParser parser = Args.parser();
     try {

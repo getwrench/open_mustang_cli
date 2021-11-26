@@ -1,4 +1,4 @@
-name: mustang_cli
+name: open_mustang_cli
 description: A sample command-line application.
 version: 1.0.0
 homepage: https://bitbucket.org/lunchclub/open-mustang-cli/src/master/
@@ -15,4 +15,4 @@ dev_dependencies:
   test: ^1.19.2
 
 executables:
-  omcli: mustang_cli
+  omcli: open_mustang_cli
