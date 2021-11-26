@@ -3,7 +3,7 @@
 ### Setup
 - Run the following command to install or update the cli 
     ```bash
-    dart pub global activate -sgit git@bitbucket.org:lunchclub/mustang_cli.git
+    dart pub global activate -sgit git@bitbucket.org:lunchclub/open-mustang-cli.git
     ```
 
 ### Commands

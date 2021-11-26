@@ -15,4 +15,4 @@ dev_dependencies:
   test: ^1.19.2
 
 executables:
-  mcli: open_mustang_cli
+  omcli: mustang_cli
