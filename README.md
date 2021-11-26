@@ -3,40 +3,40 @@
 ### Setup
 - Run the following command to install or update the cli 
     ```bash
-    dart pub global activate -sgit git@bitbucket.org:lunchclub/open-mustang-cli.git
+    dart pub global activate -sgit git@bitbucket.org:lunchclub/open_mustang_cli.git
     ```
 
 ### Commands
 - Usage
     ```bash
-    mcli # prints help
+    omcli # prints help
     ```
 
 - Create the screen and model files
     ```bash
     # use routes/booking to create screen files inside sub-directory routes
-    mcli -s booking
+    omcli -s booking
     ```
   
 - Create a model file
     ```bash
-    mcli -m vehicle
+    omcli -m vehicle
     ```
 
 - Create a mustang utils file
     ```bash
-    mcli -u
+    omcli -u
     ```
 
 - Generate framework source files
     ```bash
     # Run this inside the root directory of a Flutter project
     # -w enables watch mode. Use -d for one time generation
-    mcli -w 
+    omcli -w 
     ```
 - Clean generated framework source files
     ```bash
     # Run this inside the root directory of a Flutter project
-    mcli -d 
+    omcli -d 
     ```
 
