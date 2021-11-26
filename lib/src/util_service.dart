@@ -27,7 +27,6 @@ class UtilService {
   static String _template() {
     String pkgName = Utils.pkgName();
     String appSerializer = 'app_serializer';
-    String commonAlias = 'wrench_flutter_common';
 
     return '''
 // GENERATED CODE - DO NOT MODIFY BY HAND
@@ -36,8 +35,6 @@ import 'dart:convert';
 
 import '$pkgName/src/models/serializers.dart' as $appSerializer;
 import 'package:mustang_core/mustang_core.dart';
-import 'package:wrench_flutter_common/flutter_common.dart'
-    as $commonAlias;
 
 class MustangUtils {
   // Saves the object in WrenchStore and also persists to disk
@@ -45,11 +42,7 @@ class MustangUtils {
     WrenchStore.update(t);
     await WrenchStore.persistObject(
       '\$T',
-      jsonEncode(
-        $appSerializer.serializerNames.contains('\$T')
-            ? $appSerializer.serializers.serialize(t)
-            : $commonAlias.serializers.serialize(t),
-      ),
+      jsonEncode($appSerializer.serializers.serialize(t)),
     );
   }
 }

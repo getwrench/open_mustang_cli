@@ -1,7 +1,7 @@
 name: mustang_cli
 description: A sample command-line application.
 version: 1.0.0
-homepage: https://bitbucket.org/lunchclub/mustang_cli/src/master/
+homepage: https://bitbucket.org/lunchclub/open-mustang-cli/src/master/
 
 environment:
   sdk: '>=2.12.0 <3.0.0'
@@ -15,4 +15,4 @@ dev_dependencies:
   test: ^1.19.2
 
 executables:
-  mcli: mustang_cli
+  mcli: open_mustang_cli
