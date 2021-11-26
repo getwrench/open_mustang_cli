@@ -1,14 +1,14 @@
 import 'dart:io';
 
 import 'package:args/args.dart';
-import 'package:mustang_cli/src/app_model.dart';
-import 'package:mustang_cli/src/args.dart';
-import 'package:mustang_cli/src/screen.dart';
-import 'package:mustang_cli/src/screen_directory.dart';
-import 'package:mustang_cli/src/screen_service.dart';
-import 'package:mustang_cli/src/screen_state.dart';
-import 'package:mustang_cli/src/util_service.dart';
-import 'package:mustang_cli/src/utils.dart';
+import 'package:open_mustang_cli/src/app_model.dart';
+import 'package:open_mustang_cli/src/args.dart';
+import 'package:open_mustang_cli/src/screen.dart';
+import 'package:open_mustang_cli/src/screen_directory.dart';
+import 'package:open_mustang_cli/src/screen_service.dart';
+import 'package:open_mustang_cli/src/screen_state.dart';
+import 'package:open_mustang_cli/src/util_service.dart';
+import 'package:open_mustang_cli/src/utils.dart';
 
 class OpenMustangCli {
   static void run(List<String> args) async {
