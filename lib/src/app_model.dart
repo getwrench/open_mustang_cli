@@ -38,14 +38,14 @@ import 'package:mustang_core/mustang_core.dart';
 class \$$modelClass {
   @InitField(false)
   @SerializeField(false)
-  bool busy;
+  late bool busy;
 
   @InitField('')
   @SerializeField(false)
-  String errorMsg;
+  late String errorMsg;
   
   @InitField(false)
-  bool clearScreenCache;
+  late bool clearScreenCache;
 }
     ''';
   }
