@@ -51,7 +51,7 @@ class ${assetName}Screen extends StatelessWidget {
               return const CircularProgressIndicator(); 
             }
   
-            if (state?.$modelVar?.errorMsg?.isNotEmpty ?? false) {
+            if (state?.$modelVar?.errorMsg.isNotEmpty ?? false) {
               Text(state?.$modelVar?.errorMsg ?? 'Unknown error');
             }
   
@@ -68,9 +68,7 @@ class ${assetName}Screen extends StatelessWidget {
         ),
         body: RefreshIndicator(
           onRefresh: () => ${assetName}Service().getData(showBusy: false),
-          child: Container(
-            child: const Text('Generated screen'),
-          ),
+          child: const Text('Generated screen'),
         ),
       );
     }

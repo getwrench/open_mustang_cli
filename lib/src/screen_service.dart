@@ -57,7 +57,9 @@ class ${assetName}Service {
       );
       updateState1($modelVar);
     }
-    // TODO: Add API calls here
+    // Add API calls here, if any
+    $modelVar = $modelVar.rebuild((b) => b..busy = false);
+    updateState1($modelVar);
   }
 
   void clearCacheAndReload({bool reload = true}) {
