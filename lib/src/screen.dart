@@ -33,7 +33,7 @@ import '${assetFilename}_service.dart';
 
 class ${assetName}Screen extends StatelessWidget {
     const ${assetName}Screen({
-      Key key,
+      Key? key,
     }) : super(key: key);
   
     @override
