@@ -3,7 +3,7 @@
 ### Setup
 - Run the following command to install or update the cli 
     ```bash
-    dart pub global activate -sgit git@bitbucket.org:lunchclub/open_mustang_cli.git
+    dart pub global activate -sgit https://github.com/rajvengala/open_mustang_cli.git
     ```
 
 ### Commands
@@ -39,4 +39,3 @@
     # Run this inside the root directory of a Flutter project
     omcli -d 
     ```
-
