@@ -36,7 +36,7 @@ class ${assetName}Service {
   Future<void> memoizedGetData() {
     $assetName $modelVar = WrenchStore.get<$assetName>() ?? $assetName();
     if ($modelVar.clearScreenCache) {
-      clearCache(reload: false);
+      clearMemoizedScreen(reload: false);
       $modelVar = $modelVar.rebuild(
         (b) => b..clearScreenCache = false,
       );

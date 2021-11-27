@@ -42,20 +42,17 @@ class ${assetName}Screen extends StatelessWidget {
         state: ${assetName}State(),
         child: Builder(
           builder: (BuildContext context) {
-            ${assetName}State state = StateConsumer<${assetName}State>().of(context);
-            SchedulerBinding.instance.addPostFrameCallback(
+            ${assetName}State? state = StateConsumer<${assetName}State>().of(context);
+            SchedulerBinding.instance?.addPostFrameCallback(
               (_) => ${assetName}Service().memoizedGetData(),
             );
   
             if (state?.$modelVar?.busy ?? false) {
-              return const WrenchProgressIndicatorScreen(); 
+              return const CircularProgressIndicator(); 
             }
   
             if (state?.$modelVar?.errorMsg?.isNotEmpty ?? false) {
-              return WrenchErrorWithDescriptionScreen(
-                description: state.$modelVar.errorMsg,
-                onPressed: () => ${assetName}Service().clearCacheAndReload(),
-              );
+              Text(state?.$modelVar?.errorMsg ?? 'Unknown error');
             }
   
             return _body(state, context);
@@ -64,15 +61,15 @@ class ${assetName}Screen extends StatelessWidget {
       );
     }
   
-    Widget _body(${assetName}State state, BuildContext context) {
+    Widget _body(${assetName}State? state, BuildContext context) {
       return Scaffold(
         appBar: AppBar(
-          title: Text('$assetName'),
+          title: const Text('$assetName'),
         ),
         body: RefreshIndicator(
           onRefresh: () => ${assetName}Service().getData(showBusy: false),
           child: Container(
-            child: Text('Generated screen'),
+            child: const Text('Generated screen'),
           ),
         ),
       );
