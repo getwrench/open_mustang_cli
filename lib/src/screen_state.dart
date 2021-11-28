@@ -30,7 +30,7 @@ import '$pkgName/src/models/$modelFileName.dart';
 
 @screenState 
 class \$${assetName}State {
-  \$$assetName? $modelVar;
+  late \$$assetName $modelVar;
 }
     ''';
   }
