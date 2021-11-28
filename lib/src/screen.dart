@@ -47,12 +47,12 @@ class ${assetName}Screen extends StatelessWidget {
               (_) => ${assetName}Service().memoizedGetData(),
             );
   
-            if (state?.$modelVar?.busy ?? false) {
+            if (state?.$modelVar.busy ?? false) {
               return const CircularProgressIndicator(); 
             }
   
-            if (state?.$modelVar?.errorMsg.isNotEmpty ?? false) {
-              Text(state?.$modelVar?.errorMsg ?? 'Unknown error');
+            if (state?.$modelVar.errorMsg.isNotEmpty ?? false) {
+              Text(state?.$modelVar.errorMsg ?? 'Unknown error');
             }
   
             return _body(state, context);
