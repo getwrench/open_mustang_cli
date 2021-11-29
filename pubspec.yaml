@@ -1,7 +1,8 @@
 name: open_mustang_cli
 description: CLI to generate source templates for Mustang application.
-version: 1.0.0
-homepage: https://github.com/rajvengala/open_mustang_cli
+version: 1.0.1
+homepage: https://github.com/getwrench/open_mustang_cli
+repository: https://github.com/getwrench/open_mustang_cli
 
 environment:
   sdk: '>=2.12.0 <3.0.0'

@@ -1,4 +1,4 @@
-include: package:lints/recommended.yaml;
+include: package:lints.yaml/lints.yaml;
 
 analyzer:
   exclude:
