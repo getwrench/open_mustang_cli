@@ -3,7 +3,7 @@
 ### Setup
 - Run the following command to install or update the cli 
     ```bash
-    dart pub global activate -sgit https://github.com/getwrench/open_mustang_cli.git
+    dart pub global activate open_mustang_cli
     ```
 
 ### Commands
