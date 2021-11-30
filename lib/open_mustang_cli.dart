@@ -13,10 +13,10 @@ import 'package:path/path.dart' as p;
 import 'package:yaml/yaml.dart';
 
 class OpenMustangCli {
+  // mustang config file
+  static const String configFile = 'mustang.yaml';
   // Keys in mustang-cli.yaml
-  static const String configFile = 'mustang-cli.yaml';
-  static const String utilServiceKey = 'util_service';
-  static const String customSerializerKey = 'custom_serializer';
+  static const String serializerKey = 'serializer';
   static const String screenKey = 'screen';
   static const String screenImportsKey = 'imports';
   static const String screenErrorWidgetKey = 'error_widget';
@@ -37,10 +37,12 @@ class OpenMustangCli {
     if (configFilePath.isNotEmpty && File(configFilePath).existsSync()) {
       File configFile = File(configFilePath);
       String rawConfig = await configFile.readAsString();
+
       dynamic yamlConfig = loadYaml(rawConfig);
-      if (yamlConfig[utilServiceKey] != null) {
-        customSerializer = yamlConfig[utilServiceKey][customSerializerKey];
+      if (yamlConfig[serializerKey] != null) {
+        customSerializer = yamlConfig[serializerKey];
       }
+
       if (yamlConfig[screenKey] != null) {
         YamlList? tempScreenImports = yamlConfig[screenKey][screenImportsKey];
         if (tempScreenImports != null) {

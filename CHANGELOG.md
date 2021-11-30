@@ -17,3 +17,6 @@
 ## 1.0.5
 - Added support to for customization in generated source templates
 
+## 1.0.6
+- Refactored config file name and format
+- lint fixes
