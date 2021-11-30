@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
+import 'dart:math';
 
 import 'package:path/path.dart' as p;
 
@@ -52,5 +53,25 @@ class Utils {
     return 'package:${p.basename(p.current)}';
   }
 
-  // static boolean validateModel(String name) {}
+  static String? homeDir() {
+    Map<String, String> envVars = Platform.environment;
+    if (Platform.isMacOS) {
+      return envVars['HOME'];
+    }
+
+    if (Platform.isLinux) {
+      return envVars['HOME'];
+    }
+
+    if (Platform.isWindows) {
+      return envVars['UserProfile'];
+    }
+  }
+
+  static String generateRandomString(int len) {
+    Random random = Random();
+    const chars = 'abcdefghijklmnopqrstuvwxyz';
+    return List.generate(len, (index) => chars[random.nextInt(chars.length)])
+        .join();
+  }
 }
