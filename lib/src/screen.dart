@@ -4,7 +4,12 @@ import 'utils.dart';
 
 class Screen {
   /// [screenDir] is the directory path in  `lib/src/screens`
-  static Future<void> create(String screenDir) async {
+  static Future<void> create(
+    String screenDir,
+    List<String>? customScreenImports,
+    String? errorWidget,
+    String? progressWidget,
+  ) async {
     String assetName = Utils.pathToClass(screenDir);
     String assetFilename = Utils.class2File(assetName);
     String path =
@@ -13,7 +18,13 @@ class Screen {
     bool exists = await File(path).exists();
     if (!exists) {
       File file = File(path);
-      await file.writeAsString(_template(assetName, assetFilename));
+      await file.writeAsString(_template(
+        assetName,
+        assetFilename,
+        customScreenImports,
+        errorWidget,
+        progressWidget,
+      ));
       print('  Created $path');
       return;
     }
@@ -21,12 +32,26 @@ class Screen {
     print('$path exists, skipping operation..');
   }
 
-  static String _template(String assetName, String assetFilename) {
+  static String _template(
+    String assetName,
+    String assetFilename,
+    List<String>? customScreenImports,
+    String? errorWidget,
+    String? progressWidget,
+  ) {
+    String customScreenImportsStr =
+        customScreenImports?.map((e) => "import '$e';").toList().join('\n') ??
+            '';
     String modelVar = Utils.classNameToVar(assetName);
+    String progressWidgetStr = progressWidget ?? 'CircularProgressIndicator()';
+    String errorWidgetStr =
+        errorWidget ?? "Text(state?.$modelVar.errorMsg ?? 'Unknown error')";
+
     return '''
 import 'package:flutter/material.dart';
 import 'package:mustang_core/mustang_widgets.dart';
 import 'package:flutter/scheduler.dart';
+$customScreenImportsStr
 
 import '${assetFilename}_state.state.dart';
 import '${assetFilename}_service.dart';
@@ -48,11 +73,11 @@ class ${assetName}Screen extends StatelessWidget {
             );
   
             if (state?.$modelVar.busy ?? false) {
-              return const CircularProgressIndicator(); 
+              return const $progressWidgetStr; 
             }
   
             if (state?.$modelVar.errorMsg.isNotEmpty ?? false) {
-              Text(state?.$modelVar.errorMsg ?? 'Unknown error');
+              $errorWidgetStr;
             }
   
             return _body(state, context);

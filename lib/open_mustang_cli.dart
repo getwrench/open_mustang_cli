@@ -9,9 +9,49 @@ import 'package:open_mustang_cli/src/screen_service.dart';
 import 'package:open_mustang_cli/src/screen_state.dart';
 import 'package:open_mustang_cli/src/util_service.dart';
 import 'package:open_mustang_cli/src/utils.dart';
+import 'package:path/path.dart' as p;
+import 'package:yaml/yaml.dart';
 
 class OpenMustangCli {
+  // Keys in mustang-cli.yaml
+  static const String configFile = 'mustang-cli.yaml';
+  static const String utilServiceKey = 'util_service';
+  static const String customSerializerKey = 'custom_serializer';
+  static const String screenKey = 'screen';
+  static const String screenImportsKey = 'imports';
+  static const String screenErrorWidgetKey = 'error_widget';
+  static const String screenProgressWidgetKey = 'progress_widget';
+
   static void run(List<String> args) async {
+    // Read configuration file, if exists
+    String? userHomeDir = Utils.homeDir();
+    String configFilePath = '';
+    if (userHomeDir != null) {
+      configFilePath = p.join(userHomeDir, configFile);
+    }
+
+    String? customSerializer;
+    List<String>? customScreenImports;
+    String? errorWidget;
+    String? progressWidget;
+    if (configFilePath.isNotEmpty && File(configFilePath).existsSync()) {
+      File configFile = File(configFilePath);
+      String rawConfig = await configFile.readAsString();
+      dynamic yamlConfig = loadYaml(rawConfig);
+      if (yamlConfig[utilServiceKey] != null) {
+        customSerializer = yamlConfig[utilServiceKey][customSerializerKey];
+      }
+      if (yamlConfig[screenKey] != null) {
+        YamlList? tempScreenImports = yamlConfig[screenKey][screenImportsKey];
+        if (tempScreenImports != null) {
+          customScreenImports =
+              tempScreenImports.map((e) => e.toString()).toList();
+        }
+        errorWidget = yamlConfig[screenKey][screenErrorWidgetKey];
+        progressWidget = yamlConfig[screenKey][screenProgressWidgetKey];
+      }
+    }
+
     ArgParser parser = Args.parser();
     try {
       ArgResults parsedArgs = parser.parse(args);
@@ -30,7 +70,12 @@ class OpenMustangCli {
         await ScreenDirectory.create(screenDir);
         await ScreenState.create(screenDir);
         await ScreenService.create(screenDir);
-        await Screen.create(screenDir);
+        await Screen.create(
+          screenDir,
+          customScreenImports,
+          errorWidget,
+          progressWidget,
+        );
         print('Creating model for the screen...');
         await AppModel.create(screenDir);
       }
@@ -46,7 +91,7 @@ class OpenMustangCli {
       if (utilFlag) {
         print('Creating utils file for the project');
         String utilFileName = 'mustang_utils.dart';
-        await UtilService.create(utilFileName);
+        await UtilService.create(utilFileName, customSerializer);
       }
 
       // if arg -d/--clean exists
