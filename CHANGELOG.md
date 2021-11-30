@@ -20,3 +20,6 @@
 ## 1.0.6
 - Refactored config file name and format
 - lint fixes
+
+## 1.0.7
+- Updated README
