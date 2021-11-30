@@ -13,3 +13,7 @@
 
 ## 1.0.4
 - Updated README
+
+## 1.0.5
+- Added support to for customization in generated source templates
+

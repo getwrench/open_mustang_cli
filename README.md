@@ -39,3 +39,18 @@
     # Run this inside the root directory of a Flutter project
     omcli -d 
     ```
+
+### Config file (Advanced)
+  Source templates that this tool generates can be customized using config file.
+
+ - Create file name `mustang-cli.yaml` in the `home (Linux/Mac)` directory or `user profile (Windows)` directory
+ - Config file format
+```yaml
+  util_service:
+    custom_serializer: package:mypackage/mypackage_exports.dart
+  screen:
+    imports:
+      - package:my_widgets/widgets.dart
+    progress_widget: MyProgressIndicatorScreen()
+    error_widget: MyErrorScreen()
+```
