@@ -32,7 +32,7 @@ import '${assetFilename}_service.service.dart';
 import '${assetFilename}_state.dart';
 
 @ScreenService(screenState: \$${assetName}State) 
-abstract class ${assetName}Service {
+abstract class \$${assetName}Service {
   Future<void> memoizedGetData() {
     $assetName $modelVar = WrenchStore.get<$assetName>() ?? $assetName();
     if ($modelVar.clearScreenCache) {

@@ -26,3 +26,6 @@
 
 ## 1.0.8
 - Updated generated source templates to support abstract models/services
+
+## 1.0.9
+- Fix: incorrect service class name
