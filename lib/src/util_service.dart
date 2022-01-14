@@ -48,8 +48,10 @@ class UtilService {
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'dart:convert';
+import 'dart:developer';
 
 import '$pkgName/src/models/serializers.dart' as $appSerializer;
+import 'package:flutter/foundation.dart';
 import 'package:mustang_core/mustang_core.dart';
 $customSerializerStr
 
@@ -57,6 +59,12 @@ class MustangUtils {
   // Saves the object in WrenchStore and also persists to disk
   static Future<void> saveAndPersist<T>(T t) async {
     WrenchStore.update(t);
+    if (kDebugMode) {
+      postEvent('mustang', {
+        'modelName': '\$T', 
+        'modelStr': $jsonEncodeStr,
+      });
+    }
     await WrenchStore.persistObject(
       '\$T',
       $jsonEncodeStr,

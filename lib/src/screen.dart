@@ -53,8 +53,8 @@ import 'package:mustang_core/mustang_widgets.dart';
 import 'package:flutter/scheduler.dart';
 $customScreenImportsStr
 
+import '${assetFilename}_service.service.dart';
 import '${assetFilename}_state.state.dart';
-import '${assetFilename}_service.dart';
 
 class ${assetName}Screen extends StatelessWidget {
     const ${assetName}Screen({

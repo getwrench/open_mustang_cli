@@ -35,7 +35,7 @@ class AppModel {
 import 'package:mustang_core/mustang_core.dart';
 
 @appModel 
-class \$$modelClass {
+abstract class \$$modelClass {
   @InitField(false)
   @SerializeField(false)
   late bool busy;
