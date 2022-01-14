@@ -23,3 +23,6 @@
 
 ## 1.0.7
 - Updated README
+
+## 1.0.8
+- Updated generated source templates to support abstract models/services
