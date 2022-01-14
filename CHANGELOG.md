@@ -29,3 +29,6 @@
 
 ## 1.0.9
 - Fix: incorrect service class name
+
+## 1.0.10
+- Generated state class is made abstract

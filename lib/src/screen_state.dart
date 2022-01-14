@@ -29,7 +29,7 @@ import 'package:mustang_core/mustang_core.dart';
 import '$pkgName/src/models/$modelFileName.dart';
 
 @screenState 
-class \$${assetName}State {
+abstract class \$${assetName}State {
   late \$$assetName $modelVar;
 }
     ''';
