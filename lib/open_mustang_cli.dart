@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:args/args.dart';
 import 'package:open_mustang_cli/src/app_model.dart';
 import 'package:open_mustang_cli/src/args.dart';
+import 'package:open_mustang_cli/src/aspect.dart';
 import 'package:open_mustang_cli/src/screen.dart';
 import 'package:open_mustang_cli/src/screen_directory.dart';
 import 'package:open_mustang_cli/src/screen_service.dart';
@@ -62,6 +63,13 @@ class OpenMustangCli {
         print(parser.usage);
         exitCode = 2;
         return;
+      }
+
+      // if arg -a/--aspect exists
+      String aspectFile = parsedArgs['aspect'] ?? '';
+      if (aspectFile.isNotEmpty) {
+        print('Creating aspect file for the screen...');
+        await Aspect.create(aspectFile);
       }
 
       // if arg -s/--screen exists

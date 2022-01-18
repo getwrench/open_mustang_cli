@@ -5,6 +5,14 @@ class Args {
     ArgParser parser = ArgParser();
 
     parser.addOption(
+      'aspect',
+      abbr: 'a',
+      help: 'Creates an aspect in\n'
+          '> lib/src/aspects/sample.dart\n',
+      valueHelp: 'sample',
+    );
+
+    parser.addOption(
       'screen',
       abbr: 's',
       help: 'Creates screen files in\n'
