@@ -34,19 +34,19 @@ class Aspect {
     return '''
 import 'package:mustang_core/mustang_core.dart';
 
-@hook
-abstract class \$$aspectClass implements Aspect {
-  @override
-  bool preHook() {
+@aspect
+abstract class \$$aspectClass {
+  @before
+  bool beforeHook() {
     return true;
   }
   
-  @override
-  void postHook() {
+  @after
+  void afterHook() {
   }
   
-  @override
-  void onException(Object e, StackTrace stackTrace) {
+  @around
+  void aroundHook(Function sourceMethod) {
   }
 }
     ''';
