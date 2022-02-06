@@ -36,17 +36,9 @@ import 'package:mustang_core/mustang_core.dart';
 
 @aspect
 abstract class \$$aspectClass {
-  @before
-  bool beforeHook() {
-    return true;
-  }
-  
-  @after
-  void afterHook() {
-  }
-  
-  @around
-  void aroundHook(Function sourceMethod) {
+  @invoke
+  Future<void> run() async {
+    print('sample aspect');
   }
 }
     ''';
