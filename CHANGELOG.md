@@ -32,3 +32,7 @@
 
 ## 1.0.10
 - Generated state class is made abstract
+
+## 1.0.11
+- Introduced support to generate aspect templates
+
