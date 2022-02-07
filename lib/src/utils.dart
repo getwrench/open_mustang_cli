@@ -5,6 +5,7 @@ import 'dart:math';
 import 'package:path/path.dart' as p;
 
 class Utils {
+  static String defaultAspectPrefix = 'lib/src/aspects';
   static String defaultScreenPrefix = 'lib/src/screens';
   static String defaultModelPrefix = 'lib/src/models';
   static String defaultUtilsPrefix = 'lib/src/utils';
