@@ -36,10 +36,23 @@ import 'package:mustang_core/mustang_core.dart';
 
 @aspect
 abstract class \$$aspectClass {
+  // Uncomment below method if this is a Before or After aspect
+  /*
   @invoke
   Future<void> run() async {
-    print('sample aspect');
+    // add code here
   }
+  */
+  
+  // Uncomment below method if this is an Around aspect
+  /*
+  @invoke
+  Future<void> run(Function sourceMethod) async {
+    // add code here
+    await sourceMethod();
+    // add code here
+  }
+  */
 }
     ''';
   }
