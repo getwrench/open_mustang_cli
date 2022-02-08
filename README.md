@@ -43,7 +43,7 @@
 ### Config file (Advanced)
   Source templates that this tool generates can be customized using config file.
 
- - Create file name `mustang-cli.yaml` in the `home (Linux/Mac)` directory or `user profile (Windows)` directory
+ - Create file name `mustang.yaml` in the root of the project directory
  - Config file format
 ```yaml
   serializer: package:mypackage/mypackage_exports.dart
