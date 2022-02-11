@@ -39,7 +39,7 @@ abstract class \$$aspectClass {
   // Uncomment below method if this is a Before or After aspect
   /*
   @invoke
-  Future<void> run() async {
+  Future<void> run(Map<String, dynamic> args) async {
     // add code here
   }
   */
@@ -47,7 +47,7 @@ abstract class \$$aspectClass {
   // Uncomment below method if this is an Around aspect
   /*
   @invoke
-  Future<void> run(Function sourceMethod) async {
+  Future<void> run(Map<String, dynamic> args, Function sourceMethod) async {
     // add code here
     await sourceMethod();
     // add code here

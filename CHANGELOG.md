@@ -36,3 +36,5 @@
 ## 1.0.11
 - Introduced support to generate aspect templates
 
+## 1.0.12
+- Updated aspect templates to accept arguments
