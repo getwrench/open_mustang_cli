@@ -34,7 +34,7 @@ import '${assetFilename}_state.dart';
 @ScreenService(screenState: \$${assetName}State) 
 abstract class \$${assetName}Service {
   Future<void> memoizedGetData() {
-    $assetName $modelVar = WrenchStore.get<$assetName>() ?? $assetName();
+    $assetName $modelVar = MustangStore.get<$assetName>() ?? $assetName();
     if ($modelVar.clearScreenCache) {
       clearMemoizedScreen(reload: false);
       $modelVar = $modelVar.rebuild(
@@ -48,7 +48,7 @@ abstract class \$${assetName}Service {
   Future<void> getData({
     bool showBusy = true,
   }) async {
-    $assetName $modelVar = WrenchStore.get<$assetName>() ?? $assetName();
+    $assetName $modelVar = MustangStore.get<$assetName>() ?? $assetName();
     if (showBusy) {
       $modelVar = $modelVar.rebuild(
         (b) => b

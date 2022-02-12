@@ -2,7 +2,7 @@ name: open_mustang_cli
 description: >
   This package should be installed as global binary. It helps in generating all the necessary source file
   templates for a screen.
-version: 1.0.12
+version: 1.0.13
 repository: https://github.com/getwrench/open_mustang_cli
 
 environment:

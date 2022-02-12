@@ -56,16 +56,16 @@ import 'package:mustang_core/mustang_core.dart';
 $customSerializerStr
 
 class MustangUtils {
-  // Saves the object in WrenchStore and also persists to disk
+  // Saves the object in MustangStore and also persists to disk
   static Future<void> saveAndPersist<T>(T t) async {
-    WrenchStore.update(t);
+    MustangStore.update(t);
     if (kDebugMode) {
       postEvent('mustang', {
         'modelName': '\$T', 
         'modelStr': $jsonEncodeStr,
       });
     }
-    await WrenchStore.persistObject(
+    await MustangStore.persistObject(
       '\$T',
       $jsonEncodeStr,
     );

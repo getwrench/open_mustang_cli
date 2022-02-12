@@ -38,3 +38,6 @@
 
 ## 1.0.12
 - Updated aspect templates to accept arguments
+
+## 1.0.13
+- Updated generated code to use `MustangStore` instead of `WrenchStore`
