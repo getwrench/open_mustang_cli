@@ -41,3 +41,6 @@
 
 ## 1.0.13
 - Updated generated code to use `MustangStore` instead of `WrenchStore`
+
+## 1.0.14
+- Updated generated code as per the latest Mustang version

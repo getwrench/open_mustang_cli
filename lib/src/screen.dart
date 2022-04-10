@@ -64,7 +64,7 @@ class ${assetName}Screen extends StatelessWidget {
     @override
     Widget build(BuildContext context) {
       return StateProvider<${assetName}State>(
-        state: ${assetName}State(),
+        state: ${assetName}State(context: context),
         child: Builder(
           builder: (BuildContext context) {
             ${assetName}State? state = StateConsumer<${assetName}State>().of(context);
