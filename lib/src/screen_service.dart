@@ -29,9 +29,8 @@ import 'package:mustang_core/mustang_core.dart';
 import '$pkgName/src/models/$modelFileName.model.dart';
 
 import '${assetFilename}_service.service.dart';
-import '${assetFilename}_state.dart';
 
-@ScreenService(screenState: \$${assetName}State) 
+@screenService 
 abstract class \$${assetName}Service {
   Future<void> memoizedGetData() {
     $assetName $modelVar = MustangStore.get<$assetName>() ?? $assetName();
