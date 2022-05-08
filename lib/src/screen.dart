@@ -49,7 +49,7 @@ class Screen {
 
     return '''
 import 'package:flutter/material.dart';
-import 'package:mustang_core/mustang_widgets.dart';
+import 'package:mustang_widgets/mustang_widgets.dart';
 import 'package:flutter/scheduler.dart';
 $customScreenImportsStr
 

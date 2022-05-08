@@ -22,18 +22,14 @@
     ```bash
     omcli -m vehicle
     ```
-
-- Create a mustang utils file
-    ```bash
-    omcli -u
-    ```
-
+- 
 - Generate framework source files
     ```bash
     # Run this inside the root directory of a Flutter project
     # -w enables watch mode. Use -d for one time generation
     omcli -w 
     ```
+- 
 - Clean generated framework source files
     ```bash
     # Run this inside the root directory of a Flutter project
@@ -41,7 +37,7 @@
     ```
 
 ### Config file (Advanced)
-  Source templates that this tool generates can be customized using config file.
+Source templates that this tool generates can be customized using config file.
 
  - Create file name `mustang.yaml` in the root of the project directory
  - Config file format

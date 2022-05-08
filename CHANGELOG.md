@@ -44,3 +44,6 @@
 
 ## 1.0.14
 - Updated generated code as per the latest Mustang version
+
+## 1.0.15
+- Fix: Failed to read mustang.yaml

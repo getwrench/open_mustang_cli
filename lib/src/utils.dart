@@ -54,19 +54,15 @@ class Utils {
     return 'package:${p.basename(p.current)}';
   }
 
-  static String? homeDir() {
-    Map<String, String> envVars = Platform.environment;
-    if (Platform.isMacOS) {
-      return envVars['HOME'];
-    }
+  static bool isMustangProject() {
+    return File(p.absolute(Directory.current.path, 'mustang.yaml')).existsSync();
+  }
 
-    if (Platform.isLinux) {
-      return envVars['HOME'];
+  static String getProjectRoot() {
+    if (File(p.absolute(Directory.current.path, 'pubspec.yaml')).existsSync()) {
+      return p.absolute(Directory.current.path);
     }
-
-    if (Platform.isWindows) {
-      return envVars['UserProfile'];
-    }
+    return '';
   }
 
   static String generateRandomString(int len) {

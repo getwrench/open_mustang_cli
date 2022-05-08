@@ -14,21 +14,34 @@ import 'package:path/path.dart' as p;
 import 'package:yaml/yaml.dart';
 
 class OpenMustangCli {
-  // mustang config file
+  /// Mustang project config file
   static const String configFile = 'mustang.yaml';
-  // Keys in mustang-cli.yaml
+
+  /// Keys in mustang.yaml
+  /// serializer key in mustang.yaml
   static const String serializerKey = 'serializer';
+  /// screen key in mustang.yaml
   static const String screenKey = 'screen';
+  /// imports key in mustang.yaml
   static const String screenImportsKey = 'imports';
+  /// error_widget key in mustang.yaml
   static const String screenErrorWidgetKey = 'error_widget';
+  /// progress_widget key in mustang.yaml
   static const String screenProgressWidgetKey = 'progress_widget';
 
+  /// Main
   static void run(List<String> args) async {
+    String projectRoot = Utils.getProjectRoot();
+    if (projectRoot.isEmpty) {
+      print('Error: Current location is not the root of the project');
+      exitCode = 2;
+      return;
+    }
+
     // Read configuration file, if exists
-    String? userHomeDir = Utils.homeDir();
     String configFilePath = '';
-    if (userHomeDir != null) {
-      configFilePath = p.join(userHomeDir, configFile);
+    if (Utils.isMustangProject()) {
+      configFilePath = p.join(projectRoot, configFile);
     }
 
     String? customSerializer;
