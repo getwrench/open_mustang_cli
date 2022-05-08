@@ -22,7 +22,7 @@
     ```bash
     omcli -m vehicle
     ```
-- 
+
 - Generate framework source files
     ```bash
     # Run this inside the root directory of a Flutter project
