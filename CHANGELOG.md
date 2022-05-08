@@ -47,3 +47,6 @@
 
 ## 1.0.15
 - Fix: Failed to read mustang.yaml
+
+## 1.0.16
+- Updated README

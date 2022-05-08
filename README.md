@@ -29,7 +29,7 @@
     # -w enables watch mode. Use -d for one time generation
     omcli -w 
     ```
-- 
+
 - Clean generated framework source files
     ```bash
     # Run this inside the root directory of a Flutter project
