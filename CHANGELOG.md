@@ -50,3 +50,6 @@
 
 ## 1.0.16
 - Updated README
+
+## 1.0.17
+- Updated pub.dev issues

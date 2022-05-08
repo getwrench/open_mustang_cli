@@ -20,12 +20,16 @@ class OpenMustangCli {
   /// Keys in mustang.yaml
   /// serializer key in mustang.yaml
   static const String serializerKey = 'serializer';
+
   /// screen key in mustang.yaml
   static const String screenKey = 'screen';
+
   /// imports key in mustang.yaml
   static const String screenImportsKey = 'imports';
+
   /// error_widget key in mustang.yaml
   static const String screenErrorWidgetKey = 'error_widget';
+
   /// progress_widget key in mustang.yaml
   static const String screenProgressWidgetKey = 'progress_widget';
 

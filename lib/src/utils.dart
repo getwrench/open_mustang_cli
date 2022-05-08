@@ -55,7 +55,8 @@ class Utils {
   }
 
   static bool isMustangProject() {
-    return File(p.absolute(Directory.current.path, 'mustang.yaml')).existsSync();
+    return File(p.absolute(Directory.current.path, 'mustang.yaml'))
+        .existsSync();
   }
 
   static String getProjectRoot() {
